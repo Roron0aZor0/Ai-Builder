@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
+const path = require('path');
 const cors = require('cors');
 
 dotenv.config();
@@ -10,10 +11,19 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-// Routes
-app.get('/', (req, res) => {
-    res.send('Server is running!');
+// Middleware for serving static files
+app.use(express.static(path.join(__dirname, '../client/build')));
+
+// Catch-all route for React
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../client/build', 'index.html'));
 });
+
+
+// Routes
+// app.get('/', (req, res) => {
+//     res.send('Server is running!');
+// });
 
 // Connect to MongoDB
 mongoose.connect(process.env.MONGO_URI, {
