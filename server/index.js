@@ -14,13 +14,12 @@ app.use(cors());
 
 
 // Serve static files
-app.use(express.static(path.join(__dirname, '../client/build')));
+app.use(express.static(path.join(__dirname, 'client', 'build')));
 
 // Catch-all route for React
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../client/build/index.html'));
-});
-
+    res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
+  });
 
 // Routes
 // app.get('/', (req, res) => {
