@@ -11,12 +11,14 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-// Middleware for serving static files
+
+
+// Serve static files
 app.use(express.static(path.join(__dirname, '../client/build')));
 
 // Catch-all route for React
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../client/build', 'index.html'));
+    res.sendFile(path.join(__dirname, '../client/build/index.html'));
 });
 
 
