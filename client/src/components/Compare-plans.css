@@ -1,0 +1,89 @@
+.compare-plans {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .toggle-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .toggle-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 0.9rem;
+  }
+  
+  thead th {
+    background-color: #f1f1f1;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  tbody td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+  }
+  
+  .plan-header {
+    position: relative;
+    padding: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .recommended-plan {
+    background-color: #e8f7ff;
+    color: #007bff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 123, 255, 0.2);
+  }
+  
+  .recommended-plan .badge {
+    background: linear-gradient(90deg, #ff9900, #ffcc33);
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: bold;
+    border-radius: 20px;
+    padding: 5px 10px;
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    animation: bounce 1.5s infinite;
+    text-transform: uppercase;
+  }
+  
+  tbody tr:nth-child(odd) {
+    background-color: #f9f9f9;
+  }
+  
+  tbody tr:hover {
+    background-color: #e6f7ff;
+  }
+  
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateX(-50%) translateY(0);
+    }
+    50% {
+      transform: translateX(-50%) translateY(-5px);
+    }
+  }
+  
